@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Pajak PKB</title>
+</head>
+
+<style>
+.Main-Container {
+    margin: 20px;
+    padding: 5px;
+} 
+.Main-Container>.Judul{
+flex-direction: column;
+text-align: center;
+flex-wrap: wrap;
+font-family: 'Courier New', Courier, monospace;
+}
+
+.Judul {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Panduan */
+.Panduan {
+    float: left;
+    width: 20%;
+}
+
+.h1-panduan  {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.Container-2 {
+    background-color: red;
+    width: 35px;
+}
+
+
+.Penjelasan {
+    float: left;
+    width: 75%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-top: 35px;
+        }
+
+.Penjelasan h2 {
+            color: #4169e1;
+        }
+
+.Form-Container {
+    float: left;
+    width: 70%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Input-Data { 
+    float: left;
+    width: 70%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-top: 35px;
+    display: grid;
+}
+
+.Input-Data label {
+    font-size: 24px;
+}
+
+.Input-Data input {
+    background-color: rgb(192, 175, 175);
+}
+
+.Hasil-Data input {
+background-color: rgb(192, 175, 175);
+}
+
+.Hasil-Data label {
+    font-size: 24px;
+}
+.Hasil-Data {
+    float: left;
+    width: 70%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    margin-left: 20px;
+    margin-top: 35px;
+    display: grid;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px; 
+    margin-top: 20px; 
+}
+
+
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-hitung {
+    background-color: #3b82f6; 
+    color: white;
+}
+.btn-reset {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #ccc;
+}
+
+/* Untuk panduan agar bisa dibuka tutup*/
+.accordion {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.accordion-header {
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #f5f5f5;
+  transition: background 0.3s;
+}
+
+.accordion-content {
+  display: none;
+  padding: 12px;
+}
+
+.accordion.active .accordion-content {
+  display: block;
+}
+
+</style>
+
+
+
+<body>
+ 
+    <!-- bagian Main dan Termasuk Panduan -->
+<div class ="Main-Container">
+    <div>
+    <div class ="Judul">
+        <h1>Kalkulator Pajak PKB</h1>
+    </div>
+
+    <div class = "Container-2">
+    </div>
+
+    <!-- Panduan -->
+    <div class ="Panduan">
+        <p class="h1-panduan">Panduan</p>
+
+        <!-- NJKB -->
+    <div class="accordion">
+        <div class="accordion-header">Nilai Jual Kendaraan Bermotor (NJKB)</div>
+        <div class="accordion-content">
+            <p> Masukan harga pasaran umum kendaraan yang anda miliki, dan teteapkan berdasarkan
+                harga pasaran yang umum di minggu pertama bulan desember tahun pajak sebelumnya. 
+                NJKB buntuk kendaraan baru ditetapkan dengan Permendagri </p>
+        </div>
+    </div>
+
+        <!-- Kepemilikan -->
+    <div class="accordion">
+        <div class="accordion-header"> Kepemilikan Ke- </div>
+        <div class="accordion-content">
+            <p>Kolom ini diisi dengan status kepemilikan kendaraan bermotor.</p>
+        </div>
+    </div>
+
+    <!-- Jenis Koefisien Bobot-->
+    <div class="accordion">
+        <div class="accordion-header"> Jenis Koefisien Bobot </div>
+        <div class="accordion-content"> 
+            <p> Pada kolom ini diisi dengan koefisien bobo sesuai dengan jenis kendaraan bermotor
+                yang dimiliki.
+            </p>
+        </div>    
+    </div>
+
+    <!-- Tarif PKB -->
+    <div class="accordion">
+        <div class="accordion-header"> Tarif PKB </div>
+        <div class="accordion-content">
+            <p>Tarif PKB ditetapkan paling tinggi 1,2% untuk 
+                kepemilikan pertama dan paling tinggi 6% untuk 
+                kepemilikan selanjutnya. Tarif PKB diatur sesuai dengan 
+                Peraturan Daerah di tiap-tiap provinsi.</p>
+        </div>
+    </div>
+
+    <!--Biara SWWDKLLJ-->
+    <div class="accordion"> 
+        <div class="accordion-header"> Biaya SWDKLLJ</div>
+        <div class="accordion-content"> 
+            <p>SWDKLLJ merupakan sumbangan yang wajib dibayarkan oleh para 
+                pengusaha/ pemilik alat angkutan lalu lintas jalan kepada 
+                perusahaan yang menyelenggarakan Dana Kecelakaan Lalu Lintas Jalan. 
+                SWDKLLJ diatur dalam Peraturan Menteri Keuangan Nomor 16/PMK.010/2017. 
+                Jumlah pada kolom ini adalah jumlah SWDKLLJ ditambah biaya pembuatan 
+                kartu dana/sertifikat sebesar Rp3.000.</p>
+        </div>
+    </div>
+
+    <!-- Tarif Opsen PKB -->
+     <div class="accordion"> 
+        <div class="accordion-header">Tarif Opsen PKB </div>
+        <div class="accordion-content">
+        <p> Tarif Opsen PKB ditetapkan sebesar 66% dari PKB terutang 
+            sesuai dengan Pasal 83 ayat (1) huruf a UU HKPD.</p>    
+        </div>
+     </div>
+
+     <!-- PKB Terutang -->
+     <div class="accordion">
+        <div class="accordion-header"> PKB Terutang </div>
+        <div class="accordion-content"> 
+            <p> PKB terutang dihitung dari NJKB dikalikan Jenis Koefisien Bobot dikalikan Tarif PKB.</p>
+        </div>     
+    </div>
+
+    <!-- Opsen PKB Terutang-->
+     <div class="accordion"> 
+        <div class="accordion-header"> Opesen PKB Terutang </div>
+        <div class="accordion-content"> 
+            <P>Opsen PKB Terutang dihitung dari PKB Terutang dikalikan Tarif Opsen PKB.</P>    
+        </div>
+     </div>
+
+     <!-- Total PKB + Opsen PKB + SWDKLLJ -->
+    <div class="accordion"> 
+        <div class="accordion-header"> Total PKB + Opsen PKB + SWDKLLJ </div>
+        <div class="accordion-content"> 
+            <P>Kolom ini berisi hasil penjumlahan PKB Terutang, dan Opsen PKB Terutang, dan Biaya SWDKLLJ.</P>    
+        </div>
+     </div>
+
+    <script>
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach(header => {
+        header.addEventListener("click", () => {
+        const accordion = header.parentElement;
+        accordion.classList.toggle("active");
+        });
+    });
+    </script>
+
+</div>
+</div>
+</div>
+
+
+<!-- bagian penjelasan  -->
+<div class="Penjelasan">
+    <h2>Apa Itu PKB??</h2>
+    <p>Pajak Kendaraan Bermotor (PKB) merupakan kewajiban tahunan bagi pemilik kendaraan yang digunakan untuk mendukung pembangunan daerah. Agar lebih mudah memperkirakan jumlah pajak yang harus dibayarkan, tersedia kalkulator PKB sederhana yang membantu melakukan perhitungan secara praktis. Dengan memasukkan informasi dasar seperti jenis kendaraan, nilai jual kendaraan bermotor (NJKB), wilayah registrasi, serta jumlah kepemilikan, pengguna dapat mengetahui estimasi PKB yang terutang.</p>
+</div>
+
+ <!-- bagian data form -->
+ <div class="Form-Container">
+
+    <!-- Input Data -->
+    <div class="Input-Data">
+        <label>Jenis Kendaraan</label>
+        <input type="text">
+
+        <label>NJKB</label>
+        <input type="number" value="0">
+
+        <label>Provinsi</label>
+        <input type="text">
+
+        <label>Kepemilikan ke</label>
+        <input type="number">
+
+        <label>Jenis Koefisien Bobot</label>
+        <input type="text">
+    </div>
+
+    <!-- Hasil Data -->
+    <div class="Hasil-Data">
+        <label>Biaya SWDKLLJ</label>
+        <input type="text">
+
+        <label>Tarif PKB</label>
+        <input type="text">
+
+        <label>PKB Terutang</label>
+        <input type="text">
+
+        <label>Opsen PKB Terutang</label>
+        <input type="text">
+
+        <label>Total PKB + Opsen PKB + SWDKLLJ</label>
+        <input type="text">
+
+        <div class="btn-container">
+            <button type="reset" class="btn btn-reset">Reset</button>
+            <button type="submit" class="btn btn-hitung">Hitung</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
