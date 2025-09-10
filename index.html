@@ -78,6 +78,23 @@
             display: block;
         }
 
+        .Hasil-Data select {
+        background-color: rgb(238, 238, 238);
+        border: 1px solid #ccc;
+        padding: 8px;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        max-width: 100%; 
+        }
+
+        .Hasil-Data select option {
+        white-space: normal;   /* biar teks panjang turun ke bawah */
+        word-wrap: break-word; /* pecah kata kalau terlalu panjang */
+        padding: 5px;          /* biar lebih rapi */
+        }
+
         .Input-Data input, .Input-Data select, .Hasil-Data input {
             background-color: rgb(238, 238, 238);
             border: 1px solid #ccc;
@@ -159,49 +176,9 @@
             min-width: 300px;
         }
 
-        .Input-Data, .Hasil-Data {
-            width: auto;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 0;
-            flex-grow: 1;
-            flex-basis: 300px;
-        }
+      
 
-        .Input-Data label, .Hasil-Data label {
-            font-size: 18px;
-            margin-top: 10px;
-            display: block;
-        }
-
-        .Input-Data input, .Input-Data select, .Hasil-Data input {
-            background-color: rgb(238, 238, 238);
-            border: 1px solid #ccc;
-            padding: 8px;
-            border-radius: 4px;
-            width: 100%;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-        }
-        
-        .Hasil-Data select {
-        background-color: rgb(238, 238, 238);
-        border: 1px solid #ccc;
-        padding: 8px;
-        border-radius: 4px;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-        max-width: 100%; 
-        }
-
-        .Hasil-Data select option {
-        white-space: normal;   /* biar teks panjang turun ke bawah */
-        word-wrap: break-word; /* pecah kata kalau terlalu panjang */
-        padding: 5px;          /* biar lebih rapi */
-        }
+   
     </style>
 </head>
 <body>
@@ -365,7 +342,7 @@
     </div>
 
     <div class="Hasil-Data">
-                        
+                         
         <label>Biaya SWDKLLJ</label>
 <select name="swdkllj" id="swdkllj">
 <option value="" selected disabled>Pilih SWDKLLJ</option>
