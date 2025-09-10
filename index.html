@@ -158,6 +158,50 @@
             flex: 1;
             min-width: 300px;
         }
+
+        .Input-Data, .Hasil-Data {
+            width: auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 0;
+            flex-grow: 1;
+            flex-basis: 300px;
+        }
+
+        .Input-Data label, .Hasil-Data label {
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .Input-Data input, .Input-Data select, .Hasil-Data input {
+            background-color: rgb(238, 238, 238);
+            border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        
+        .Hasil-Data select {
+        background-color: rgb(238, 238, 238);
+        border: 1px solid #ccc;
+        padding: 8px;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        max-width: 100%; 
+        }
+
+        .Hasil-Data select option {
+        white-space: normal;   /* biar teks panjang turun ke bawah */
+        word-wrap: break-word; /* pecah kata kalau terlalu panjang */
+        padding: 5px;          /* biar lebih rapi */
+        }
     </style>
 </head>
 <body>
@@ -319,5 +363,34 @@
             </div>
         </div>
     </div>
+
+    <div class="Hasil-Data">
+                        
+        <label>Biaya SWDKLLJ</label>
+<select name="swdkllj" id="swdkllj">
+<option value="" selected disabled>Pilih SWDKLLJ</option>
+<option value="A" title="Golongan A Rp3,000, mencangkup sepeda motor kapasitas mesin 50 cc ke bawah, mobil ambulans, mobil jenazah, dan mobil pemadan kebakaran">Golongan A Rp3,000</option>
+<option value="B" title="Golongan B, Rp23,000, mencangkup traktor, bulldozer, forklift, mobil, derek, excavator, crane, dan sejenisnya">Golongan B Rp23,000</option>
+<option value="C1" title="Golongan C1, Rp35,000, mencakup sepeda motor, sepeda kumbang, dan skuter kapasitas mesin di atas 50 cc sampai dengan 250 cc, dan kendaraan bermotor roda tiga">Golongan C1 Rp35,000</option>
+<option value="C2" title="Golongan C2, Rp83,000, mencakup sepeda motor dan skuter berkapasitas mesin di atas 250 cc">Golongan C2 Rp83,000</option>
+</select>
+        <label>Tarif PKB</label>
+        <input type="text" disabled readonly>
+        <label>PKB Terutang</label>
+        <input type="text" disabled readonly>
+        <label>Opsen PKB Terutang</label>
+        <input type="text" disabled readonly>
+        <label>Total PKB + Opsen PKB + SWDKLLJ</label>
+        <input type="text" disabled readonly>
+        <div class="btn-container">
+            <button type="reset" class="btn btn-reset">Reset</button>
+            <button type="submit" class="btn btn-hitung">Hitung</button>
+        </div>
+    </div>
+
+    
+
+
+    
 </body>
 </html>
