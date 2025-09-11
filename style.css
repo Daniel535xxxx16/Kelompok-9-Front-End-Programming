@@ -94,9 +94,9 @@ max-width: 100%;
 }
 
 .Hasil-Data select option {
-white-space: normal;   /* biar teks panjang turun ke bawah */
-word-wrap: break-word; /* pecah kata kalau terlalu panjang */
-padding: 5px;          /* biar lebih rapi */
+white-space: normal;  
+word-wrap: break-word; 
+padding: 5px;       
 }
 
 .btn-container {
